@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\BackgroundImageController;
 use App\Http\Controllers\ComponentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -24,4 +25,6 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     Route::post('/get-components', [ComponentController::class, 'get']);
+
+    Route::post('/get-background-images', [ BackgroundImageController::class, 'get' ]);
 });
