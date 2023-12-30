@@ -3,6 +3,8 @@
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\BackgroundImageController;
 use App\Http\Controllers\ComponentController;
+use App\Http\Controllers\MenuController;
+use App\Models\Api\Menu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,4 +29,13 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/get-components', [ComponentController::class, 'get']);
 
     Route::post('/get-background-images', [ BackgroundImageController::class, 'get' ]);
+
+    Route::prefix('component/')->group(function () {
+
+        Route::get('templates', [MenuController::class, 'getTemplates']);
+
+        Route::get('get-menu/{userId}', [MenuController::class, 'getByUser']);
+
+        Route::post('save', [ComponentController::class, 'save']);
+    });
 });
