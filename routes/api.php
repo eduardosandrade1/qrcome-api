@@ -32,10 +32,17 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::prefix('component/')->group(function () {
 
-        Route::get('templates', [MenuController::class, 'getTemplates']);
-
-        Route::get('get-menu/{userId}', [MenuController::class, 'getByUser']);
-
         Route::post('save', [ComponentController::class, 'save']);
+        Route::get('view/{menuId}', [ComponentController::class, 'getView']);
+
+    });
+
+    Route::prefix('menu/')->group(function () {
+
+        Route::prefix('templates')->group(function() {
+            Route::get('', [MenuController::class, 'getTemplates']);
+        });
+        Route::get('get/{userId}', [MenuController::class, 'getByUser']);
+        Route::post('delete/{menuId}', [MenuController::class, 'delete']);
     });
 });
