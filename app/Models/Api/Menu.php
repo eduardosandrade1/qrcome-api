@@ -11,6 +11,13 @@ class Menu extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'background_image',
+        'is_template',
+        'body_items',
+        'opacity_bg'
+    ];
+
     public function users()
     {
         return $this->belongsToMany(User::class, 'user_menus');
