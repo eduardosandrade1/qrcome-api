@@ -26,6 +26,18 @@ class ComponentController extends Controller
         return response()->json($bodyComponent);
     }
 
+    public function getView($menuId)
+    {
+        try {
+            $menu = Menu::where('id', $menuId)->get();
+            return response()->json($menu);
+
+        } catch (Exception $e) {
+            Log::error($e->getMessage(). "Line: ". $e->getLine());
+            return response()->json("bad-requisition");
+        }
+    }
+
     public function save(MenuBodyRequest $request)
     {
         try {
@@ -45,7 +57,11 @@ class ComponentController extends Controller
                 $userMenu->menu_id = $menuId;
                 if ( $userMenu->save() ) {
                     return response()->json([
-                        'status' => 'insert-success'
+                        'status' => 'insert-success',
+                        'datas'  => [
+                            'url'    => env('APP_API_URL', 'https://localhost:8000/api').'/component/view/'.$menuId,
+                            'id'     => $menuId,
+                        ]
                     ]);
                 }
 
