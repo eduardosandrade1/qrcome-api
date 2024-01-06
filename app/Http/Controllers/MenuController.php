@@ -45,7 +45,6 @@ class MenuController extends Controller
     public function delete(int|string $menuId)
     {
         try {
-            $menuId = Crypt::decrypt($menuId);
 
             $userId =  auth('sanctum')->user()->id;
 
