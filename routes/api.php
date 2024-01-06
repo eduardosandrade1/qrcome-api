@@ -42,7 +42,7 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::prefix('templates')->group(function() {
             Route::get('', [MenuController::class, 'getTemplates']);
         });
-        Route::get('get/{userId}', [MenuController::class, 'getByUser']);
+        Route::get('get', [MenuController::class, 'getByUser']);
         Route::post('delete/{menuId}', [MenuController::class, 'delete']);
     });
 });

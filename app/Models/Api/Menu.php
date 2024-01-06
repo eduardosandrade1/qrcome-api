@@ -3,9 +3,11 @@
 namespace App\Models\Api;
 
 use App\Models\User;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
+use Illuminate\Support\Facades\Crypt;
 
 class Menu extends Model
 {
@@ -17,6 +19,13 @@ class Menu extends Model
         'body_items',
         'opacity_bg'
     ];
+
+    protected function id(): Attribute
+    {
+        return Attribute::make(
+            get: fn (string $value) => Crypt::encrypt($value),
+        );
+    }
 
     public function users()
     {

@@ -7,6 +7,7 @@ use App\Models\Api\UserMenu;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Log;
 
 class MenuController extends Controller
@@ -27,9 +28,11 @@ class MenuController extends Controller
 
     }
 
-    public function getByUser(int|string $userId)
+    public function getByUser()
     {
         try {
+            $userId =  auth('sanctum')->user()->id;
+
             $user = User::find($userId);
 
             return response()->json($user->menus);
@@ -42,6 +45,8 @@ class MenuController extends Controller
     public function delete(int|string $menuId)
     {
         try {
+            $menuId = Crypt::decrypt($menuId);
+
             $userId =  auth('sanctum')->user()->id;
 
             if ( UserMenu::where('user_id', $userId)->where('menu_id', $menuId)->delete() ) {
