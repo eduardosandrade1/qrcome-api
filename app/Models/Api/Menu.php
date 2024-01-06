@@ -20,13 +20,6 @@ class Menu extends Model
         'opacity_bg'
     ];
 
-    protected function id(): Attribute
-    {
-        return Attribute::make(
-            get: fn (string $value) => Crypt::encrypt($value),
-        );
-    }
-
     public function users()
     {
         return $this->belongsToMany(User::class, 'user_menus');

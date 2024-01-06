@@ -9,7 +9,6 @@ use App\Models\Component;
 use Exception;
 use Illuminate\Http\Client\Response;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Log;
 
 class ComponentController extends Controller
@@ -30,7 +29,6 @@ class ComponentController extends Controller
     public function getView($menuId)
     {
         try {
-            $menuId = Crypt::decrypt($menuId);
             $menu = Menu::where('id', $menuId)->get();
             return response()->json($menu);
 
@@ -55,14 +53,14 @@ class ComponentController extends Controller
                 $menuId = $menu->id;
 
                 $userMenu = new UserMenu();
-                $userMenu->user_id = Crypt::decrypt($request->user_id);
+                $userMenu->user_id = auth('sanctum')->user()->id;
                 $userMenu->menu_id = $menuId;
                 if ( $userMenu->save() ) {
                     return response()->json([
                         'status' => 'insert-success',
                         'datas'  => [
-                            'url'    => env('APP_API_URL', 'http://localhost:8100/mount-components/').Crypt::encrypt($menuId),
-                            'id'     => Crypt::encrypt($menuId),
+                            'url'    => env('APP_API_URL', 'http://localhost:8100/mount-components/').$menuId,
+                            'id'     => $menuId,
                         ]
                     ]);
                 }
