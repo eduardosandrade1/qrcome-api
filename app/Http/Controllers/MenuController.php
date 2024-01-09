@@ -60,10 +60,7 @@ class MenuController extends Controller
                     }
                 }
             }
-
-            return response()->json([
-                'status' => 'bad-relation-menu'
-            ]);
+            abort(500, 'bad-relation-menu');
 
         } catch (Exception $e) {
             Log::error("::ComponentController : 91 ~ ".json_encode($e));
