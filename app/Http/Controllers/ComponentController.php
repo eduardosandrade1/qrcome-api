@@ -38,6 +38,35 @@ class ComponentController extends Controller
         }
     }
 
+    public function update(string|int $id, MenuBodyRequest $request)
+    {
+        try {
+            $menu = Menu::find($id);
+            $menu->body_items = json_encode($request->get('items'));
+            $menu->background_image = $request->get('background_url');
+            $menu->opacity_bg = $request->get('background_opacity');
+
+            if ( $menu->save() ) {
+
+                return response()->json([
+                    'status' => 'insert-success',
+                    'datas'  => [
+                        'url'    => env('APP_API_URL', 'http://localhost:8100/mount-components/').$id,
+                        'id'     => $id,
+                    ]
+                ]);
+            }
+
+            return response()->json([
+                'status' => 'bad-menu'
+            ]);
+
+
+        } catch (Exception $e) {
+            Log::error("::ComponentController : 59 ~ ".json_encode($e));
+            abort(500, 'bad-insert-menu');
+        }
+    }
     public function save(MenuBodyRequest $request)
     {
         try {
