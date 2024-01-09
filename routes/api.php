@@ -39,6 +39,8 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::prefix('menu/')->group(function () {
 
+        Route::post('update/{menuId}', [ComponentController::class, 'update']);
+
         Route::prefix('templates')->group(function() {
             Route::get('', [MenuController::class, 'getTemplates']);
         });
