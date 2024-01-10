@@ -1,30 +1,212 @@
 [
     {
-        "name": "banner",
-        "is_crud": false,
-        "datas": {
-          "src": {
-            "value": "https://images.pexels.com/photos/708488/pexels-photo-708488.jpeg",
-            "type": "file"
+        "label": "Categoria sem imagem",
+        "name": "category-segment",
+        "is_crud": true,
+        "datas": [
+          {
+            "id": 1,
+            "name": {
+              "label": "Nome",
+              "value": "Comida",
+              "type": "text"
+            }
+          },
+          {
+            "id": 2,
+            "name": {
+              "label": "Nome",
+              "value": "Bebidas",
+              "type": "text"
+            }
+          },
+          {
+            "id": 3,
+            "name": {
+              "label": "Nome",
+              "value": "Sobremesa",
+              "type": "text"
+            }
           }
-        },
+        ],
         "classes": [
           {
             "label": "Fundo transparente?",
             "value": "bg-transparent",
             "active": true,
             "hasOptions": false
+          },
+          {
+            "label": "Cor do título da categoria:",
+            "value": "label-category",
+            "hasOptions": true,
+            "options": [
+              {
+                "type": "color",
+                "label": "Vermelho",
+                "value": "red",
+                "active": false
+              },
+              {
+                "type": "color",
+                "label": "Amarelo",
+                "value": "yellow",
+                "active": false
+              },
+              {
+                "type": "color",
+                "label": "Verde",
+                "value": "green",
+                "active": false
+              },
+              {
+                "type": "color",
+                "label": "Preto",
+                "value": "black",
+                "active": true
+              },
+              {
+                "type": "color",
+                "label": "Laranja",
+                "value": "orange",
+                "active": false
+              },
+              {
+                "type": "color",
+                "label": "Branco",
+                "value": "white",
+                "active": false
+              },
+              {
+                "type": "color",
+                "label": "Azul",
+                "value": "blue",
+                "active": false
+              }
+            ],
+            "active": false
           }
         ]
-      },
-      {
+    },
+    {
+        "label": "Categoria com imagem",
+        "name": "category-image",
+        "is_crud": true,
+        "datas": [
+          {
+            "id": 1,
+            "name": {
+              "label": "Nome da categoria",
+              "value": "Comida",
+              "type": "text"
+            },
+            "src": {
+              "label": "Imagem:",
+              "value": "https:\/\/images.pexels.com\/photos\/19202901\/pexels-photo-19202901\/free-photo-of-maca-comida-alimento-refeicao.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+              "type": "file"
+            }
+          },
+          {
+            "id": 2,
+            "name": {
+              "label": "Nome da categoria",
+              "value": "Bebidas",
+              "type": "text"
+            },
+            "src": {
+              "label": "Imagem",
+              "value": "https:\/\/images.pexels.com\/photos\/8448340\/pexels-photo-8448340.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+              "type": "file"
+            }
+          },
+          {
+            "id": 3,
+            "name": {
+              "label": "Nome da categoria",
+              "value": "Sobremesa",
+              "type": "text"
+            },
+            "src": {
+              "label": "Imagem",
+              "value": "https:\/\/images.pexels.com\/photos\/8448340\/pexels-photo-8448340.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+              "type": "file"
+            }
+          }
+        ],
+        "classes": [
+          {
+            "label": "Arredondar borda?",
+            "value": "rouded",
+            "active": false,
+            "hasOptions": false
+          },
+          {
+            "label": "Fundo transparente?",
+            "value": "bg-transparent",
+            "active": true,
+            "hasOptions": false
+          },
+          {
+            "label": "Cor do título da categoria:",
+            "value": "label-category",
+            "hasOptions": true,
+            "options": [
+              {
+                "type": "color",
+                "label": "Vermelho",
+                "value": "red",
+                "active": false
+              },
+              {
+                "type": "color",
+                "label": "Amarelo",
+                "value": "yellow",
+                "active": false
+              },
+              {
+                "type": "color",
+                "label": "Verde",
+                "value": "green",
+                "active": false
+              },
+              {
+                "type": "color",
+                "label": "Preto",
+                "value": "black",
+                "active": true
+              },
+              {
+                "type": "color",
+                "label": "Laranja",
+                "value": "orange",
+                "active": false
+              },
+              {
+                "type": "color",
+                "label": "Branco",
+                "value": "white",
+                "active": false
+              },
+              {
+                "type": "color",
+                "label": "Azul",
+                "value": "blue",
+                "active": false
+              }
+            ],
+            "active": false
+          }
+        ]
+    },
+    {
+        "label": "Item informações do produto",
         "name": "item-detail",
         "is_crud": false,
         "datas": {
           "category": "",
           "src": {
             "name": "Imagem",
-            "value": "https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "value": "https:\/\/images.pexels.com\/photos\/1639557\/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "type": "file"
           },
           "title": {
@@ -39,13 +221,23 @@
           },
           "description": {
             "name": "Descritivo",
-            "value": "Aqui vai o descritivo do lanche",
+            "value": "Aqui vai o descritivo do produto",
+            "type": "text"
+          },
+          "textOldPrice": {
+            "name": "Texto antes do novo preço",
+            "value": "De",
             "type": "text"
           },
           "oldPrice": {
             "name": "Preço",
-            "value": 20.00,
+            "value": 20,
             "type": "number"
+          },
+          "textNewPrice": {
+            "name": "Texto antes do novo preço",
+            "value": "Por",
+            "type": "text"
           },
           "newPrice": {
             "name": "Preço antigo",
@@ -299,53 +491,74 @@
               }
             ],
             "active": false
+          },
+          {
+            "label": "Mostrar o TEXTO do preço atual do produto?",
+            "value": "show-new-price-text",
+            "active": true,
+            "hasOptions": false
+          },
+          {
+            "label": "Mostrar o TEXTO do antigo preço do produto?",
+            "value": "show-old-price-text",
+            "active": true,
+            "hasOptions": false
+          },
+          {
+            "label": "Mostrar antigo preço do produto?",
+            "value": "show-old-price",
+            "active": true,
+            "hasOptions": false
           }
         ]
-      },
-      {
-        "name": "category-image",
-        "is_crud": true,
-        "datas": [
-          {
-            "id": 1,
-            "name": {
-              "label": "Nome da categoria",
-              "value": "Apple1",
-              "type": "text"
-            },
-            "src": {
-              "label": "Imagem:",
-              "value": "https://images.pexels.com/photos/19202901/pexels-photo-19202901/free-photo-of-maca-comida-alimento-refeicao.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-              "type": "file"
-            }
+    },
+    {
+        "label": "Item em GRID",
+        "name": "item-grid",
+        "is_crud": false,
+        "datas": {
+          "category": "",
+          "src": {
+            "name": "Imagem",
+            "value": "https:\/\/images.pexels.com\/photos\/1639557\/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "type": "file"
           },
-          {
-            "id": 2,
-            "name": {
-              "label": "Nome da categoria",
-              "value": "Apple2",
-              "type": "text"
-            },
-            "src": {
-              "label": "Imagem",
-              "value": "https://images.pexels.com/photos/8448340/pexels-photo-8448340.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-              "type": "file"
-            }
+          "title": {
+            "name": "Título",
+            "value": "item Um",
+            "type": "text"
           },
-          {
-            "id": 3,
-            "name": {
-              "label": "Nome da categoria",
-              "value": "Apple3",
-              "type": "text"
-            },
-            "src": {
-              "label": "Imagem",
-              "value": "https://images.pexels.com/photos/8448340/pexels-photo-8448340.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-              "type": "file"
-            }
+          "subtitle": {
+            "name": "Subtitulo",
+            "value": "Pão grãos, alface, tomate, haburguer vegano",
+            "type": "text"
+          },
+          "description": {
+            "name": "Descritivo",
+            "value": "Aqui vai o descritivo do produto",
+            "type": "text"
+          },
+          "textOldPrice": {
+            "name": "Texto antes do novo preço",
+            "value": "De",
+            "type": "text"
+          },
+          "oldPrice": {
+            "name": "Preço",
+            "value": 20,
+            "type": "number"
+          },
+          "textNewPrice": {
+            "name": "Texto antes do novo preço",
+            "value": "Por",
+            "type": "text"
+          },
+          "newPrice": {
+            "name": "Preço antigo",
+            "value": 12.99,
+            "type": "number"
           }
-        ],
+        },
         "classes": [
           {
             "label": "Arredondar borda?",
@@ -354,92 +567,161 @@
             "hasOptions": false
           },
           {
+            "label": "Cor do título:",
+            "value": "title",
+            "hasOptions": true,
+            "options": [
+              {"type":"color","label":"Vermelho","value":"red","active":false},
+              {"type":"color","label":"Amarelo","value":"yellow","active":false},
+              {"type":"color","label":"Verde","value":"green","active":false},
+              {"type":"color","label":"Preto","value":"black","active":true},
+              {"type":"color","label":"Laranja","value":"orange","active":false},
+              {"type":"color","label":"Branco","value":"white","active":false},
+              {"type":"color","label":"Azul","value":"blue","active":false}
+            ],
+            "active": false
+          },
+          {
+            "label": "Cor de fundo do item:",
+            "value": "bg-item",
+            "hasOptions": true,
+            "options": [
+              {"type":"color","label":"Branco","value":"white","active":false},
+              {"type":"color","label":"Transparente","value":"bg-transparent","active":true}
+            ],
+            "active": false
+          },
+          {
+            "label": "Cor do subtitulo:",
+            "value": "subtitle",
+            "hasOptions": true,
+            "options": [
+              {"type":"color","label":"Vermelho","value":"red","active":false},
+              {"type":"color","label":"Amarelo","value":"yellow","active":false},
+              {"type":"color","label":"Verde","value":"green","active":false},
+              {"type":"color","label":"Preto","value":"black","active":true},
+              {"type":"color","label":"Laranja","value":"orange","active":false},
+              {"type":"color","label":"Branco","value":"white","active":false},
+              {"type":"color","label":"Azul","value":"blue","active":false}
+            ],
+            "active": false
+          },
+          {
+            "label": "Cor do preço antigo:",
+            "value": "old-price",
+            "hasOptions": true,
+            "options": [
+              {"type":"color","label":"Vermelho","value":"red","active":true},
+              {"type":"color","label":"Amarelo","value":"yellow","active":false},
+              {"type":"color","label":"Verde","value":"green","active":false},
+              {"type":"color","label":"Preto","value":"black","active":false},
+              {"type":"color","label":"Laranja","value":"orange","active":false},
+              {"type":"color","label":"Branco","value":"white","active":false},
+              {"type":"color","label":"Azul","value":"blue","active":false}
+            ],
+            "active": false
+          },
+          {
+            "label": "Cor do novo preço:",
+            "value": "new-price",
+            "hasOptions": true,
+            "options": [
+              {"type":"color","label":"Vermelho","value":"red","active":false},
+              {"type":"color","label":"Amarelo","value":"yellow","active":false},
+              {"type":"color","label":"Verde","value":"green","active":true},
+              {"type":"color","label":"Preto","value":"black","active":false},
+              {"type":"color","label":"Laranja","value":"orange","active":false},
+              {"type":"color","label":"Branco","value":"white","active":false},
+              {"type":"color","label":"Azul","value":"blue","active":false}
+            ],
+            "active": false
+          },
+          {
+            "label": "Mostrar o TEXTO do preço atual do produto?",
+            "value": "show-new-price-text",
+            "active": true,
+            "hasOptions": false
+          },
+          {
+            "label": "Mostrar o TEXTO do antigo preço do produto?",
+            "value": "show-old-price-text",
+            "active": true,
+            "hasOptions": false
+          },
+          {
+            "label": "Mostrar antigo preço do produto?",
+            "value": "show-old-price",
+            "active": true,
+            "hasOptions": false
+          }
+        ]
+    },
+    {
+        "label": "Banner",
+        "name":"banner",
+        "is_crud":false,
+        "datas":{
+            "src":{
+                "value":"https:\/\/images.pexels.com\/photos\/708488\/pexels-photo-708488.jpeg",
+                "type":"file"
+            }
+        },
+        "classes":[
+            {
+                "label":"Fundo transparente?",
+                "value":"bg-transparent",
+                "active":true,
+                "hasOptions":false
+            }
+        ]
+    },
+    {
+        "label": "Texto",
+        "name": "text",
+        "is_crud": false,
+        "datas": {
+          "text": {
+            "name": "Valor do texto",
+            "value": "Texto vazio...",
+            "type": "text"
+          }
+        },
+        "classes": [
+          {
             "label": "Fundo transparente?",
             "value": "bg-transparent",
             "active": true,
             "hasOptions": false
           },
           {
-            "label": "Cor do título da categoria:",
-            "value": "label-category",
+            "label": "Alinhamento do texto",
+            "value": "text-align",
             "hasOptions": true,
             "options": [
-              {
-                "type": "color",
-                "label": "Vermelho",
-                "value": "red",
-                "active": false
-              },
-              {
-                "type": "color",
-                "label": "Amarelo",
-                "value": "yellow",
-                "active": false
-              },
-              {
-                "type": "color",
-                "label": "Verde",
-                "value": "green",
-                "active": false
-              },
-              {
-                "type": "color",
-                "label": "Preto",
-                "value": "black",
-                "active": true
-              },
-              {
-                "type": "color",
-                "label": "Laranja",
-                "value": "orange",
-                "active": false
-              },
-              {
-                "type": "color",
-                "label": "Branco",
-                "value": "white",
-                "active": false
-              },
-              {
-                "type": "color",
-                "label": "Azul",
-                "value": "blue",
-                "active": false
-              }
+              {"type":"icon","label":"arrow-back-outline","value":"text-start","active":true},
+              {"type":"icon","label":"remove-outline","value":"text-center","active":false},
+              {"type":"icon","label":"arrow-forward-outline","value":"text-end","active":false}
+            ],
+            "active": false
+          },
+          {
+            "label": "Cor do texto",
+            "value": "text-color",
+            "hasOptions": true,
+            "options": [
+              {"type":"color","label":"Vermelho","value":"red","active":false},
+              {"type":"color","label":"Amarelo","value":"yellow","active":false},
+              {"type":"color","label":"Verde","value":"green","active":false},
+              {"type":"color","label":"Preto","value":"black","active":true},
+              {"type":"color","label":"Laranja","value":"orange","active":false},
+              {"type":"color","label":"Branco","value":"white","active":false},
+              {"type":"color","label":"Azul","value":"blue","active":false}
             ],
             "active": false
           }
         ]
-      },
-      {
-        "name": "category-segment",
-        "is_crud": true,
-        "datas": [
-          {
-            "id": 1,
-            "name": {
-              "label": "Nome",
-              "value": "Comida",
-              "type": "text"
-            }
-          },
-          {
-            "id": 2,
-            "name": {
-              "label": "Nome",
-              "value": "Bebidas",
-              "type": "text"
-            }
-          },
-          {
-            "id": 3,
-            "name": {
-              "label": "Nome",
-              "value": "Sobremesa",
-              "type": "text"
-            }
-          }
-        ],
-        "classes": []
-      }
+    }
+
+
+
 ]
