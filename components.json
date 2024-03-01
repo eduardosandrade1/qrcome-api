@@ -520,43 +520,136 @@
           "category": "",
           "src": {
             "name": "Imagem",
-            "value": "https:\/\/images.pexels.com\/photos\/1639557\/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "value": [
+              "https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+              "https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+              "https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            ],
             "type": "file"
           },
           "title": {
             "name": "Título",
             "value": "item Um",
-            "type": "text"
-          },
-          "subtitle": {
-            "name": "Subtitulo",
-            "value": "Pão grãos, alface, tomate, haburguer vegano",
-            "type": "text"
+            "type": "text",
+            "moreOptions": [
+              {
+                "label": "Cor do título",
+                "type": "color-hex",
+                "value": "#234",
+                "active": false
+              },
+              {
+                "label": "Fonte do título",
+                "type": "font",
+                "value": "Century Gothic",
+                "fontOptions": [
+                  "Century Gothic",
+                  "Arial",
+                  "Verdana",
+                  "Helvetica",
+                  "Trebuchet MS",
+                  "Georgia",
+                  "Courier New",
+                  "Comic Sans MS",
+                  "Brush Script MT",
+                  "Impact",
+                  "Lucida Sans",
+                  "Constantia"
+                ]
+              }
+            ]
           },
           "description": {
             "name": "Descritivo",
             "value": "Aqui vai o descritivo do produto",
-            "type": "text"
-          },
-          "textOldPrice": {
-            "name": "Texto antes do novo preço",
-            "value": "De",
-            "type": "text"
-          },
-          "oldPrice": {
-            "name": "Preço",
-            "value": 20,
-            "type": "number"
-          },
-          "textNewPrice": {
-            "name": "Texto antes do novo preço",
-            "value": "Por",
-            "type": "text"
+            "type": "text",
+            "moreOptions": [
+              {
+                "label": "Fonte da descrição",
+                "type": "font",
+                "value": "Century Gothic",
+                "fontOptions": [
+                  "Century Gothic",
+                  "Arial",
+                  "Verdana",
+                  "Helvetica",
+                  "Trebuchet MS",
+                  "Georgia",
+                  "Courier New",
+                  "Comic Sans MS",
+                  "Brush Script MT",
+                  "Impact",
+                  "Lucida Sans",
+                  "Constantia"
+                ]
+              }
+            ]
           },
           "newPrice": {
-            "name": "Preço antigo",
+            "name": "Preço",
             "value": 12.99,
-            "type": "number"
+            "type": "number",
+            "moreOptions": [
+              {
+                "label": "Fonte do preço",
+                "type": "font",
+                "value": "Century Gothic",
+                "fontOptions": [
+                  "Century Gothic",
+                  "Arial",
+                  "Verdana",
+                  "Helvetica",
+                  "Trebuchet MS",
+                  "Georgia",
+                  "Courier New",
+                  "Comic Sans MS",
+                  "Brush Script MT",
+                  "Impact",
+                  "Lucida Sans",
+                  "Constantia"
+                ]
+              }
+            ]
+          },
+          "sizeVariable": {
+            "name": "Variação de tamanho",
+            "type": "item-crud",
+            "active": true,
+            "value": [
+              {
+                "type": "text",
+                "value": "PP",
+                "active": false
+              }
+            ],
+            "moreOptions": [
+              {
+                "label": "Mostrar variação de tamanho?",
+                "type": "toggle",
+                "value": true,
+                "active": false
+              }
+            ]
+          },
+          "colorVariable": {
+            "name": "Variação de cor",
+            "type": "item-crud",
+            "active": true,
+            "value": [
+              {
+                "type": "color",
+                "value": "#000",
+                "active": false
+              }
+            ],
+            "moreOptions": [
+              {
+                "label": "Mostrar variação de tamanho?",
+                "type": "toggle",
+                "value": true,
+                "active": false
+              }
+            ]
           }
         },
         "classes": [
@@ -567,92 +660,14 @@
             "hasOptions": false
           },
           {
-            "label": "Cor do título:",
-            "value": "title",
-            "hasOptions": true,
-            "options": [
-              {"type":"color","label":"Vermelho","value":"red","active":false},
-              {"type":"color","label":"Amarelo","value":"yellow","active":false},
-              {"type":"color","label":"Verde","value":"green","active":false},
-              {"type":"color","label":"Preto","value":"black","active":true},
-              {"type":"color","label":"Laranja","value":"orange","active":false},
-              {"type":"color","label":"Branco","value":"white","active":false},
-              {"type":"color","label":"Azul","value":"blue","active":false}
-            ],
-            "active": false
-          },
-          {
             "label": "Cor de fundo do item:",
             "value": "bg-item",
             "hasOptions": true,
             "options": [
-              {"type":"color","label":"Branco","value":"white","active":false},
-              {"type":"color","label":"Transparente","value":"bg-transparent","active":true}
+              { "type": "color", "label": "Branco", "value": "white", "active": false },
+              { "type": "color", "label": "Transparente", "value": "bg-transparent", "active": true }
             ],
             "active": false
-          },
-          {
-            "label": "Cor do subtitulo:",
-            "value": "subtitle",
-            "hasOptions": true,
-            "options": [
-              {"type":"color","label":"Vermelho","value":"red","active":false},
-              {"type":"color","label":"Amarelo","value":"yellow","active":false},
-              {"type":"color","label":"Verde","value":"green","active":false},
-              {"type":"color","label":"Preto","value":"black","active":true},
-              {"type":"color","label":"Laranja","value":"orange","active":false},
-              {"type":"color","label":"Branco","value":"white","active":false},
-              {"type":"color","label":"Azul","value":"blue","active":false}
-            ],
-            "active": false
-          },
-          {
-            "label": "Cor do preço antigo:",
-            "value": "old-price",
-            "hasOptions": true,
-            "options": [
-              {"type":"color","label":"Vermelho","value":"red","active":true},
-              {"type":"color","label":"Amarelo","value":"yellow","active":false},
-              {"type":"color","label":"Verde","value":"green","active":false},
-              {"type":"color","label":"Preto","value":"black","active":false},
-              {"type":"color","label":"Laranja","value":"orange","active":false},
-              {"type":"color","label":"Branco","value":"white","active":false},
-              {"type":"color","label":"Azul","value":"blue","active":false}
-            ],
-            "active": false
-          },
-          {
-            "label": "Cor do novo preço:",
-            "value": "new-price",
-            "hasOptions": true,
-            "options": [
-              {"type":"color","label":"Vermelho","value":"red","active":false},
-              {"type":"color","label":"Amarelo","value":"yellow","active":false},
-              {"type":"color","label":"Verde","value":"green","active":true},
-              {"type":"color","label":"Preto","value":"black","active":false},
-              {"type":"color","label":"Laranja","value":"orange","active":false},
-              {"type":"color","label":"Branco","value":"white","active":false},
-              {"type":"color","label":"Azul","value":"blue","active":false}
-            ],
-            "active": false
-          },
-          {
-            "label": "Mostrar o TEXTO do preço atual do produto?",
-            "value": "show-new-price-text",
-            "active": true,
-            "hasOptions": false
-          },
-          {
-            "label": "Mostrar o TEXTO do antigo preço do produto?",
-            "value": "show-old-price-text",
-            "active": true,
-            "hasOptions": false
-          },
-          {
-            "label": "Mostrar antigo preço do produto?",
-            "value": "show-old-price",
-            "active": true,
-            "hasOptions": false
           }
         ]
     },
