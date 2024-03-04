@@ -21,6 +21,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/login', [AuthController::class, 'login']);
 
+Route::post('/register', [AuthController::class, 'register']);
+
+Route::post('/confirm-code/{email}', [AuthController::class, 'confirmCode']);
+
+Route::post('/set-password/{email}', [AuthController::class, 'setPassword']);
+
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/user', function (Request $request) {
         return $request->user();
