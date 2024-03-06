@@ -24,11 +24,13 @@
             "moreOptions": [
               {
                 "label": "Cor do título",
+                "id_option": "color_title",
                 "type": "color-hex",
                 "value": "#234",
                 "active": false
               },
               {
+                "id_option": "font_title",
                 "label": "Fonte do título",
                 "type": "font",
                 "value": "Century Gothic",
@@ -55,23 +57,24 @@
             "type": "textarea",
             "moreOptions": [
               {
+                "id_option": "font_desc",
                 "label": "Fonte da descrição",
                 "type": "font",
                 "value": "Century Gothic",
                 "fontOptions": [
-                  "Century Gothic",
-                  "Arial",
-                  "Verdana",
-                  "Helvetica",
-                  "Trebuchet MS",
-                  "Georgia",
-                  "Courier New",
-                  "Comic Sans MS",
-                  "Brush Script MT",
-                  "Impact",
-                  "Lucida Sans",
-                  "Constantia"
-                ]
+                    "Century Gothic",
+                    "Arial",
+                    "Verdana",
+                    "Helvetica",
+                    "Trebuchet MS",
+                    "Georgia",
+                    "Courier New",
+                    "Comic Sans MS",
+                    "Brush Script MT",
+                    "Impact",
+                    "Lucida Sans",
+                    "Constantia"
+                  ]
               }
             ]
           },
@@ -81,31 +84,48 @@
             "type": "number",
             "moreOptions": [
               {
+                "id_option": "color_price",
                 "label": "Cor do preço",
                 "type": "color-hex",
                 "value": "#234",
                 "active": false
               },
               {
+                  "id_option": "font_price",
                 "label": "Fonte do preço",
                 "type": "font",
                 "value": "Century Gothic",
                 "fontOptions": [
-                  "Century Gothic",
-                  "Arial",
-                  "Verdana",
-                  "Helvetica",
-                  "Trebuchet MS",
-                  "Georgia",
-                  "Courier New",
-                  "Comic Sans MS",
-                  "Brush Script MT",
-                  "Impact",
-                  "Lucida Sans",
-                  "Constantia"
-                ]
+                    "Century Gothic",
+                    "Arial",
+                    "Verdana",
+                    "Helvetica",
+                    "Trebuchet MS",
+                    "Georgia",
+                    "Courier New",
+                    "Comic Sans MS",
+                    "Brush Script MT",
+                    "Impact",
+                    "Lucida Sans",
+                    "Constantia"
+                  ]
               }
             ]
+          },
+          "quantity": {
+              "name": "Quantidade",
+              "type": "number",
+              "value": 1,
+              "active": false,
+              "moreOptions": [
+                {
+                  "id_option": "show_qtt",
+                  "label": "Quer mostrar a quantidade?",
+                  "type": "toggle",
+                  "value": false,
+                  "active": false
+                }
+              ]
           },
           "sizeVariable": {
             "name": "Variação de tamanho",
@@ -117,15 +137,16 @@
                 "value": "PP",
                 "active": false
               }
-            ],
+              ],
             "moreOptions": [
               {
+                "id_option": "show_sizes",
                 "label": "Mostrar variação de tamanho?",
                 "type": "toggle",
                 "value": true,
                 "active": false
               }
-            ]
+              ]
           },
           "colorVariable": {
             "name": "Variação de cor",
@@ -140,7 +161,8 @@
             ],
             "moreOptions": [
               {
-                "label": "Mostrar variação de tamanho?",
+                "id_option": "show_color",
+                "label": "Mostrar variação de cor?",
                 "type": "toggle",
                 "value": true,
                 "active": false
@@ -160,14 +182,51 @@
             "value": "bg-item",
             "hasOptions": true,
             "options": [
-              { "type": "color", "label": "Branco", "value": "white", "active": false },
-              { "type": "color", "label": "Transparente", "value": "bg-transparent", "active": true }
+              {
+                "type": "color",
+                "label": "Branco",
+                "value": "white",
+                "active": false
+              },
+              {
+                "type": "color",
+                "label": "Transparente",
+                "value": "bg-transparent",
+                "active": true
+              }
             ],
             "active": false
           }
         ]
     },
-    {"label":"Banner","name":"banner","is_crud":false,"datas":{"src":{"value":"https:\/\/images.pexels.com\/photos\/708488\/pexels-photo-708488.jpeg","type":"file"}},"classes":[{"label":"Fundo transparente?","value":"bg-transparent","active":true,"hasOptions":false}]},
+    {
+        "label": "Banner",
+        "name": "banner",
+        "is_crud": false,
+        "datas": {
+          "src": {
+            "value": [
+             "https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+              "https://images.pexels.com/photos/325876/pexels-photo-325876.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            ],
+            "type": "file"
+          }
+        },
+        "classes": [
+          {
+            "label": "Fundo transparente?",
+            "value": "bg-transparent",
+            "active": true,
+            "hasOptions": false
+          },
+          {
+            "label": "Fotos automáticas?",
+            "value": "automatic-images",
+            "active": true,
+            "hasOption": false
+          }
+        ]
+    },
     {"label":"Texto","name":"text","is_crud":false,"datas":{"text":{"name":"Valor do texto","value":"Texto vazio...","type":"text"}},"classes":[{"label":"Fundo transparente?","value":"bg-transparent","active":true,"hasOptions":false},{"label":"Alinhamento do texto","value":"text-align","hasOptions":true,"options":[{"type":"icon","label":"arrow-back-outline","value":"text-start","active":true},{"type":"icon","label":"remove-outline","value":"text-center","active":false},{"type":"icon","label":"arrow-forward-outline","value":"text-end","active":false}],"active":false},{"label":"Cor do texto","value":"text-color","hasOptions":true,"options":[{"type":"color","label":"Vermelho","value":"red","active":false},{"type":"color","label":"Amarelo","value":"yellow","active":false},{"type":"color","label":"Verde","value":"green","active":false},{"type":"color","label":"Preto","value":"black","active":true},{"type":"color","label":"Laranja","value":"orange","active":false},{"type":"color","label":"Branco","value":"white","active":false},{"type":"color","label":"Azul","value":"blue","active":false}],"active":false}]}
 
 
