@@ -74,6 +74,8 @@ class ComponentController extends Controller
             # create menu first
             $menu = new Menu();
             $menu->body_items = json_encode($request->get('items'));
+            $menu->name = $request->get('model_name');
+            $menu->color = $request->get('model_color');
             $menu->background_image = $request->get('background_url');
             $menu->opacity_bg = $request->get('background_opacity');
 

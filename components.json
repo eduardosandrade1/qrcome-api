@@ -206,8 +206,24 @@
         "datas": {
           "src": {
             "value": [
-             "https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+              "https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
               "https://images.pexels.com/photos/325876/pexels-photo-325876.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            ],
+            "moreOptions": [
+              {
+                "label": "Imagens automáticas?",
+                "id_option": "auto_images",
+                "type": "toggle",
+                "value": true,
+                "active": false
+              },
+              {
+                "label": "Espaçamento lateral?",
+                "id_option": "border",
+                "type": "toggle",
+                "value": false,
+                "active": false
+              }
             ],
             "type": "file"
           }
@@ -223,7 +239,7 @@
             "label": "Fotos automáticas?",
             "value": "automatic-images",
             "active": true,
-            "hasOption": false
+            "hasOptions": false
           }
         ]
     },

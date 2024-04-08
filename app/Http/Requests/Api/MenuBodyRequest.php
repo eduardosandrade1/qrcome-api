@@ -23,6 +23,8 @@ class MenuBodyRequest extends FormRequest
     {
         return [
             'items' => [ 'required' ],
+            'model_name' => [ 'required' ],
+            'model_color' => [ 'required' ],
             'background_url' => [ 'required' ],
             'background_opacity' => [ 'required' ],
         ];

@@ -32,6 +32,8 @@ Route::middleware('auth:sanctum')->group(function () {
         return $request->user();
     });
 
+    Route::post('/save-config-menu', [MenuController::class, 'saveConfig']);
+
     Route::post('/get-components', [ComponentController::class, 'get']);
 
     Route::post('/get-background-images', [ BackgroundImageController::class, 'get' ]);

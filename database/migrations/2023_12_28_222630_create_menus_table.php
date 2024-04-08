@@ -14,7 +14,11 @@ return new class extends Migration
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
             $table->json('body_items');
+            $table->string('name', 60);
             $table->string('background_image');
+            $table->string('splash_path')->nullable(true)->default(null);
+            $table->string('logo_path')->nullable(true)->default(null);
+            $table->string('color');
             $table->unsignedBigInteger('opacity_bg')->default('100');
             $table->boolean('is_template')->default(false);
             $table->timestamps();
